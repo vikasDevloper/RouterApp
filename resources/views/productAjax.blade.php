@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 6 Ajax CRUD tutorial using Datatable - ItSolutionStuff.com</title>
+    <title>Router Information </title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -107,14 +107,14 @@
         $('#saveBtn').val("create-product");
         $('#product_id').val('');
         $('#productForm').trigger("reset");
-        $('#modelHeading').html("Create New Product");
+        $('#modelHeading').html("Add New Router Information");
         $('#ajaxModel').modal('show');
     });
     
     $('body').on('click', '.editProduct', function () {
       var product_id = $(this).data('id');
       $.get("{{ route('routerinfo.index') }}" +'/' + product_id +'/edit', function (data) {
-          $('#modelHeading').html("Edit Product");
+          $('#modelHeading').html("Edit Router Information");
           $('#saveBtn').val("edit-user");
           $('#ajaxModel').modal('show');
           $('#product_id').val(data.id);
