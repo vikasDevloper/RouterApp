@@ -18,4 +18,4 @@ Route::get('/test', function () {
     return view('welcome'); 
 });
 
-Route::resource('routerinfo','RouterAjaxController');
+Route::resource('ajaxproducts','RouterAjaxController');
