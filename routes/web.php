@@ -17,4 +17,5 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('welcome'); 
 });
+Route::resource('ajaxproducts2','ProductAjaxController');
 Route::resource('ajaxproducts','ProductAjaxController');

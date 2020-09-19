@@ -15,14 +15,17 @@
 <body>
     
 <div class="container">
-    <h1>Laravel 6 Ajax CRUD tutorial using Datatable - ItSolutionStuff.com</h1>
-    <a class="btn btn-success" href="javascript:void(0)" id="createNewProduct"> Create New Product</a>
+    <h1>Routers INformation</h1>
+    <a class="btn btn-success" href="javascript:void(0)" id="createNewProduct"> Create New Router Info</a>
     <table class="table table-bordered data-table">
         <thead>
             <tr>
                 <th>No</th>
-                <th>Name</th>
-                <th>Details</th>
+                <th>Sap ID</th>
+                <th>HostName</th>
+                <th>LookBack</th>
+                <th>Mac Address</th>
+                <th>HostName</th>
                 <th width="280px">Action</th>
             </tr>
         </thead>
@@ -39,20 +42,32 @@
             </div>
             <div class="modal-body">
                 <form id="productForm" name="productForm" class="form-horizontal">
-                   <input type="hidden" name="product_id" id="product_id">
+                   <input type="hidden" name="sap_id" id="product_id">
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Name</label>
+                        <label for="sap_id" class="col-sm-2 control-label">Name</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" value="" maxlength="50" required="">
+                            <input type="text" class="form-control" id="sap_id" name="sap_id" placeholder="Enter SapId" value="" maxlength="50" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="hostname" class="col-sm-2 control-label">Hostname</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="hostname" name="hostname" placeholder="Enter hostname" value="" maxlength="50" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="loopback" class="col-sm-2 control-label">Loopback</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="loopback" name="loopback" placeholder="Enter Loopback" value="" maxlength="50" required="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="macaddress" class="col-sm-2 control-label">Macaddress	</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="macaddress" name="macaddress	" placeholder="Enter macaddress	" value="" maxlength="50" required="">
                         </div>
                     </div>
      
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Details</label>
-                        <div class="col-sm-12">
-                            <textarea id="detail" name="detail" required="" placeholder="Enter Details" class="form-control"></textarea>
-                        </div>
-                    </div>
       
                     <div class="col-sm-offset-2 col-sm-10">
                      <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Save changes
@@ -81,8 +96,10 @@
         ajax: "{{ route('ajaxproducts.index') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'name', name: 'name'},
-            {data: 'detail', name: 'detail'},
+            {data: 'sap_id', name: 'sap_id'},
+            {data: 'hostname', name: 'hostname'},
+            {data: 'loopback', name: 'loopback'},
+            {data: 'macaddress', name: 'macaddress'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
