@@ -25,7 +25,6 @@
                 <th>HostName</th>
                 <th>LookBack</th>
                 <th>Mac Address</th>
-                <th>HostName</th>
                 <th width="280px">Action</th>
             </tr>
         </thead>
@@ -42,7 +41,7 @@
             </div>
             <div class="modal-body">
                 <form id="productForm" name="productForm" class="form-horizontal">
-                   <input type="hidden" name="sap_id" id="product_id">
+                   <input type="hidden" name="product_id" id="product_id">
                     <div class="form-group">
                         <label for="sap_id" class="col-sm-2 control-label">Name</label>
                         <div class="col-sm-12">

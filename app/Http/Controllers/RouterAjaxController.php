@@ -40,8 +40,7 @@ class RouterAjaxController extends Controller
     public function store(Request $request)
     {
         Router::updateOrCreate(['id' => $request->product_id],
-                ['name' => $request->name, 'detail' => $request->detail]);        
-   
+                ['sap_id' => $request->sap_id, 'hostname' => $request->hostname,'loopback' => $request->loopback,'macaddress' => $request->macaddress]);        
         return response()->json(['success'=>'Product saved successfully.']);
     }
     /**
