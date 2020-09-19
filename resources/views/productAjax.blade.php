@@ -63,7 +63,7 @@
                     <div class="form-group">
                         <label for="macaddress" class="col-sm-2 control-label">Macaddress	</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="macaddress" name="macaddress	" placeholder="Enter macaddress	" value="" maxlength="50" required="">
+                            <input type="text" class="form-control" id="macaddress" name="macaddress" placeholder="Enter macaddress	" value="" maxlength="50" required="">
                         </div>
                     </div>
      
