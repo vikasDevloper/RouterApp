@@ -92,7 +92,7 @@
     var table = $('.data-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('ajaxproducts.index') }}",
+        ajax: "{{ route('routerinfo.index') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'sap_id', name: 'sap_id'},
@@ -113,13 +113,15 @@
     
     $('body').on('click', '.editProduct', function () {
       var product_id = $(this).data('id');
-      $.get("{{ route('ajaxproducts.index') }}" +'/' + product_id +'/edit', function (data) {
+      $.get("{{ route('routerinfo.index') }}" +'/' + product_id +'/edit', function (data) {
           $('#modelHeading').html("Edit Product");
           $('#saveBtn').val("edit-user");
           $('#ajaxModel').modal('show');
           $('#product_id').val(data.id);
-          $('#name').val(data.name);
-          $('#detail').val(data.detail);
+          $('#sap_id').val(data.sap_id);
+          $('#hostname').val(data.hostname);
+          $('#loopback').val(data.loopback);
+          $('#macaddress').val(data.macaddress);
       })
    });
     
@@ -129,7 +131,7 @@
     
         $.ajax({
           data: $('#productForm').serialize(),
-          url: "{{ route('ajaxproducts.store') }}",
+          url: "{{ route('routerinfo.store') }}",
           type: "POST",
           dataType: 'json',
           success: function (data) {
@@ -153,7 +155,7 @@
       
         $.ajax({
             type: "DELETE",
-            url: "{{ route('ajaxproducts.store') }}"+'/'+product_id,
+            url: "{{ route('routerinfo.store') }}"+'/'+product_id,
             success: function (data) {
                 table.draw();
             },
